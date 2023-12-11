@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="./booking.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./normalize.css">
+</head>
+<body>
+    <section class="contain">
+        <section class="box">
+            <nav>
+                <section class="logo">
+                    <section class="logoimage">
+                        <img src="./logo.png" alt="logo">
+                    </section>
+                </section>
+                <ul> 
+                    <li class="active"><a href="mobile.html">Home</a></li>
+                    <li><a href="./branches.html">Branches</a></li>
+                    <li><a href="./restaurants.html">Restaurants</a></li>
+                    <li><a href="./Adventures.html">Adventures</a></li>
+                </ul>
+            </nav>
+            <header>
+                <title>Booking and Reservations</title>
+            </header>
+            <main>
+                <h2>Room Booking</h2>
+                <form id="roomBookingForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                    
+                    <label for="number">Number:</label>
+                    <input type="tel" id="number" pattern="[0-9]{10}" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    
+                    <label for="roomType">Choose Room Type:</label>
+                    <select id="roomType">
+                        <option value="single">Single Room</option>
+                        <option value="double">Double Room</option>
+                        <option value="triple">Triple Room</option>
+                    </select>
+                    
+                    <label for="numberOfRooms">Number of Rooms:</label>
+                    <input type="number" id="numberOfRooms" min="1" required>
+                    
+                    <div class="adultAndChildInput">
+                        <label for="numberOfAdults">Number of Adults:</label>
+                        <input type="number" id="numberOfAdults" min="1" required>
+                    </div>
+                    
+                    <div class="adultAndChildInput">
+                        <label for="numberOfChildren">Number of Children:</label>
+                        <input type="number" id="numberOfChildren" min="0" required>
+                    </div>
+                    
+                    <label for="durationOfStay">Duration of Stay (nights):</label>
+                    <input type="number" id="durationOfStay" min="1" required>
+                    
+                    <label for="extraRequirements">Extra Requirements:</label>
+                    <textarea id="extraRequirements" rows="3" placeholder="Enter any additional requirements"></textarea>
+                    
+                    <label for="promoCode">Promo Code:</label>
+                    <input type="text" id="promoCode">
+                    
+                    <div class="bookingButtons">
+                        <button type="button" id="calculateCost">Calculate Cost</button>
+                        <button type="button" id="bookNow">Book Now</button>
+                        <!-- Add to Favorites button -->
+                        <button type="button" id="addToFavorites">Add to Favorites</button>
+                        <!-- Check Loyalty button -->
+                        <button type="button" id="checkLoyalty">Check Loyalty</button>
+                    </div>
+                </form>
+                
+                <h2>Current Booking</h2>
+                <div id="currentBooking"></div>
+                
+                <h2>Overall Booking</h2>
+                <div id="overallBooking"></div>
+                
+                <h2>Adventure Booking</h2>
+                <form id="adventureBookingForm">
+                    <label for="nameAdventure">Name:</label>
+                    <input type="text" id="nameAdventure" required>
+                    
+                    <label for="numberAdventure">Number:</label>
+                    <input type="tel" id="numberAdventure" pattern="[0-9]{10}" required>
+                    
+                    <label for="emailAdventure">Email:</label>
+                    <input type="email" id="emailAdventure" required>
+                    
+                    <label for="adventureType">Choose Adventure:</label>
+                    <select id="adventureType">
+                        <option value="divingLocalAdult">Diving - Local Adult (1 hr)</option>
+                        <option value="divingLocalChild">Diving - Local Child (above 5 years)</option>
+                        <option value="divingForeignAdult">Diving - Foreign Adult</option>
+                        <option value="divingForeignChild">Diving - Foreign Child</option>
+                    </select>
+                    
+                    <label for="numberOfParticipants">Number of Participants:</label>
+                    <input type="number" id="numberOfParticipants" min="1" required>
+                    
+                    <label for="needGuide">Need Guide:</label>
+                    <input type="checkbox" id="needGuide">
+                    
+                    <div class="bookingButtons">
+                        <button type="button" id="calculateAdventureCost">Calculate Cost</button>
+                        <button type="button" id="bookAdventure">Book Adventure</button>
+                    </div>
+                </form>
+                
+                <div id="adventureBookingMessage"></div>
+            </main>
+            
+            <footer>
+                <p>&copy; 2023 Booking and Reservations</p>
+                <script src="./booking.js"></script>
+            </footer>
+        </section>
+    </section>
+</body>
+</html>
